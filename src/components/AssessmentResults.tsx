@@ -125,9 +125,9 @@ export const AssessmentResults = ({ score, responses }: AssessmentResultsProps) 
 
           <Card className="bg-background/50 border-therapeutic/20">
             <CardContent className="pt-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Recommendations by Severity Level</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">Personalized Recommendations</h3>
               
-              <div className="space-y-4">
+              {score <= 7 && (
                 <div className="p-4 rounded-lg bg-calming/10 border border-calming/20">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-calming" />
@@ -140,7 +140,9 @@ export const AssessmentResults = ({ score, responses }: AssessmentResultsProps) 
                     <li>• Stay connected with supportive friends and family</li>
                   </ul>
                 </div>
+              )}
 
+              {score >= 8 && score <= 13 && (
                 <div className="p-4 rounded-lg bg-support/10 border border-support/20">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Info className="h-4 w-4 text-support" />
@@ -154,7 +156,9 @@ export const AssessmentResults = ({ score, responses }: AssessmentResultsProps) 
                     <li>• Maintain healthy lifestyle habits</li>
                   </ul>
                 </div>
+              )}
 
+              {score >= 14 && score <= 19 && (
                 <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <AlertCircle className="h-4 w-4 text-primary" />
@@ -168,7 +172,9 @@ export const AssessmentResults = ({ score, responses }: AssessmentResultsProps) 
                     <li>• Consider accommodations at school if needed</li>
                   </ul>
                 </div>
+              )}
 
+              {score >= 20 && (
                 <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <AlertCircle className="h-4 w-4 text-destructive" />
@@ -183,7 +189,7 @@ export const AssessmentResults = ({ score, responses }: AssessmentResultsProps) 
                     <li>• Consider medication evaluation with a psychiatrist</li>
                   </ul>
                 </div>
-              </div>
+              )}
             </CardContent>
           </Card>
 
