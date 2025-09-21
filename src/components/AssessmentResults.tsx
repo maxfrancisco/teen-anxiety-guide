@@ -123,6 +123,70 @@ export const AssessmentResults = ({ score, responses }: AssessmentResultsProps) 
             </CardContent>
           </Card>
 
+          <Card className="bg-background/50 border-therapeutic/20">
+            <CardContent className="pt-6">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Recommendations by Severity Level</h3>
+              
+              <div className="space-y-4">
+                <div className="p-4 rounded-lg bg-calming/10 border border-calming/20">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-calming" />
+                    Minimal Anxiety (0-7)
+                  </h4>
+                  <ul className="text-sm text-foreground space-y-1 ml-6">
+                    <li>• Continue current healthy coping strategies</li>
+                    <li>• Maintain regular exercise and sleep schedule</li>
+                    <li>• Practice mindfulness or relaxation techniques</li>
+                    <li>• Stay connected with supportive friends and family</li>
+                  </ul>
+                </div>
+
+                <div className="p-4 rounded-lg bg-support/10 border border-support/20">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <Info className="h-4 w-4 text-support" />
+                    Mild Anxiety (8-13)
+                  </h4>
+                  <ul className="text-sm text-foreground space-y-1 ml-6">
+                    <li>• Talk to a trusted adult, teacher, or school counselor</li>
+                    <li>• Learn stress management and breathing techniques</li>
+                    <li>• Consider joining a support group for teens</li>
+                    <li>• Monitor symptoms and track triggers</li>
+                    <li>• Maintain healthy lifestyle habits</li>
+                  </ul>
+                </div>
+
+                <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4 text-primary" />
+                    Moderate Anxiety (14-19)
+                  </h4>
+                  <ul className="text-sm text-foreground space-y-1 ml-6">
+                    <li>• Schedule an appointment with a mental health professional</li>
+                    <li>• Consider therapy such as Cognitive Behavioral Therapy (CBT)</li>
+                    <li>• Discuss with parents/guardians about treatment options</li>
+                    <li>• Implement structured anxiety management strategies</li>
+                    <li>• Consider accommodations at school if needed</li>
+                  </ul>
+                </div>
+
+                <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4 text-destructive" />
+                    Severe Anxiety (20-40)
+                  </h4>
+                  <ul className="text-sm text-foreground space-y-1 ml-6">
+                    <li>• Seek immediate professional mental health support</li>
+                    <li>• Contact a crisis helpline if having thoughts of self-harm</li>
+                    <li>• Consider intensive therapy or treatment programs</li>
+                    <li>• Work with healthcare providers on comprehensive treatment plan</li>
+                    <li>• Involve family/support system in treatment process</li>
+                    <li>• Consider medication evaluation with a psychiatrist</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
             <Button
               onClick={resetAssessment}
